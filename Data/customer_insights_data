@@ -1,0 +1,329 @@
+import pandas as pd
+import random
+from datetime import datetime, timedelta
+import pandas as pd
+import random
+from datetime import datetime, timedelta
+
+# -----------------------------
+# SETTINGS
+# -----------------------------
+
+random.seed(42)
+
+NUM_CUSTOMERS = 1000
+NUM_PRODUCTS = 100
+NUM_ORDERS = 8000
+
+# -----------------------------
+# CUSTOMER DATA
+# -----------------------------
+
+first_names = [
+    "Ahmed", "Rahim", "Aisha", "Parveen", "sumaiya",
+    "Salim", "Adil", "Noor", "Kausar", "Fatima",
+    "Rauf", "Anas", "Imran", "Dawood", "Sameera"
+]
+
+last_names = [
+    "khaleel", "Shahul", "Parvez", "Shah", "Khan",
+    "yusuf", "Imtiyaz", "Naif", "Ghouse", "fathima"
+]
+
+cities_states = {
+    "Chennai": "Tamil Nadu",
+    "Bengaluru": "Karnataka",
+    "Mumbai": "Maharashtra",
+    "Delhi": "Delhi",
+    "Hyderabad": "Telangana",
+    "Pune": "Maharashtra",
+    "Kolkata": "West Bengal",
+    "Ahmedabad": "Gujarat",
+    "Jaipur": "Rajasthan",
+    "Kochi": "Kerala"
+}
+
+customers = []
+
+for customer_id in range(1, NUM_CUSTOMERS + 1):
+
+    first_name = random.choice(first_names)
+    last_name = random.choice(last_names)
+
+    city = random.choice(list(cities_states.keys()))
+    state = cities_states[city]
+
+    signup_date = datetime(2023, 1, 1) + timedelta(
+        days=random.randint(0, 1000)
+    )
+
+    customers.append([
+        customer_id,
+        f"{first_name} {last_name}",
+        city,
+        state,
+        signup_date.date()
+    ])
+
+customers_df = pd.DataFrame(
+    customers,
+    columns=[
+        "customer_id",
+        "customer_name",
+        "city",
+        "state",
+        "signup_date"
+    ]
+)
+
+# -----------------------------
+# PRODUCT DATA
+# -----------------------------
+
+product_categories = {
+    "Electronics": [
+        "Mobiles",
+        "Accessories",
+        "Audio"
+    ],
+    "Fashion": [
+        "Mens Wear",
+        "Womens Wear",
+        "Footwear"
+    ],
+    "Home & Kitchen": [
+        "Kitchen",
+        "Home Decor",
+        "Appliances"
+    ],
+    "Beauty": [
+        "Skincare",
+        "Haircare",
+        "Personal Care"
+    ],
+    "Grocery": [
+        "Snacks",
+        "Beverages",
+        "Staples"
+    ]
+}
+
+products = []
+
+product_id = 1
+
+for category, subcategories in product_categories.items():
+
+    for subcategory in subcategories:
+
+        for i in range(1, 8):
+
+            product_name = f"{subcategory} Product {i}"
+
+            products.append([
+                product_id,
+                product_name,
+                category,
+                subcategory
+            ])
+
+            product_id += 1
+
+products_df = pd.DataFrame(
+    products,
+    columns=[
+        "product_id",
+        "product_name",
+        "category",
+        "subcategory"
+    ]
+)
+
+# -----------------------------
+# ORDER DATA
+# -----------------------------
+
+orders = []
+
+# Give each customer a behavior type
+customer_behavior = {}
+
+for customer_id in range(1, NUM_CUSTOMERS + 1):
+
+    behavior = random.choices(
+        ["high_value", "loyal", "regular", "at_risk", "lost"],
+        weights=[10, 20, 40, 15, 15]
+    )[0]
+
+    customer_behavior[customer_id] = behavior
+
+
+for order_id in range(1, NUM_ORDERS + 1):
+
+    customer_id = random.randint(1, NUM_CUSTOMERS)
+
+    behavior = customer_behavior[customer_id]
+
+    # Different purchasing patterns
+    if behavior == "high_value":
+        order_date = datetime(2026, 1, 1) + timedelta(
+            days=random.randint(0, 238)
+        )
+        unit_price = random.randint(1500, 10000)
+
+    elif behavior == "loyal":
+        order_date = datetime(2025, 1, 1) + timedelta(
+            days=random.randint(0, 500)
+        )
+        unit_price = random.randint(800, 5000)
+
+    elif behavior == "regular":
+        order_date = datetime(2025, 1, 1) + timedelta(
+            days=random.randint(0, 500)
+        )
+        unit_price = random.randint(300, 3000)
+
+    elif behavior == "at_risk":
+        order_date = datetime(2025, 1, 1) + timedelta(
+            days=random.randint(0, 300)
+        )
+        unit_price = random.randint(500, 4000)
+
+    else:
+        order_date = datetime(2024, 1, 1) + timedelta(
+            days=random.randint(0, 250)
+        )
+        unit_price = random.randint(300, 2500)
+
+    product_id = random.randint(
+        1,
+        len(products_df)
+    )
+
+    quantity = random.randint(1, 4)
+
+    orders.append([
+        order_id,
+        customer_id,
+        product_id,
+        order_date.date(),
+        quantity,
+        unit_price
+    ])
+
+orders_df = pd.DataFrame(
+    orders,
+    columns=[
+        "order_id",
+        "customer_id",
+        "product_id",
+        "order_date",
+        "quantity",
+        "unit_price"
+    ]
+)
+
+# -----------------------------
+# EXPORT TO CSV
+# -----------------------------
+
+customers_df.to_csv(
+    "customers.csv",
+    index=False
+)
+
+products_df.to_csv(
+    "products.csv",
+    index=False
+)
+
+orders_df.to_csv(
+    "orders.csv",
+    index=False
+)
+
+# -----------------------------
+# BASIC CHECK
+# -----------------------------
+
+print("Dataset generated successfully!")
+
+print("\nCustomers:")
+print(customers_df.head())
+
+print("\nProducts:")
+print(products_df.head())
+
+print("\nOrders:")
+print(orders_df.head())
+
+print("\nRecord counts:")
+print("Customers:", len(customers_df))
+print("Products:", len(products_df))
+print("Orders:", len(orders_df))
+
+# -----------------------------
+# DATA VALIDATION
+# -----------------------------
+
+print("\n--- DATA VALIDATION ---")
+
+print("\nCustomer Dataset Info:")
+print(customers_df.info())
+
+print("\nProduct Dataset Info:")
+print(products_df.info())
+
+print("\nOrder Dataset Info:")
+print(orders_df.info())
+
+# Missing values
+print("\nMissing Values:")
+print("\nCustomers:")
+print(customers_df.isnull().sum())
+
+print("\nProducts:")
+print(products_df.isnull().sum())
+
+print("\nOrders:")
+print(orders_df.isnull().sum())
+
+# Duplicate records
+print("\nDuplicate Records:")
+
+print(
+    "Customers:",
+    customers_df.duplicated().sum()
+)
+
+print(
+    "Products:",
+    products_df.duplicated().sum()
+)
+
+print(
+    "Orders:",
+    orders_df.duplicated().sum()
+)
+
+# Unique ID checks
+print("\nUnique ID Checks:")
+
+print(
+    "Unique Customer IDs:",
+    customers_df["customer_id"].nunique()
+)
+
+print(
+    "Unique Product IDs:",
+    products_df["product_id"].nunique()
+)
+
+print(
+    "Unique Order IDs:",
+    orders_df["order_id"].nunique()
+)
+
+# Basic statistics
+print("\nOrder Statistics:")
+print(orders_df[["quantity", "unit_price"]].describe())

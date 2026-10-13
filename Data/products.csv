@@ -1,0 +1,106 @@
+product_id,product_name,category,subcategory
+1,Mobiles Product 1,Electronics,Mobiles
+2,Mobiles Product 2,Electronics,Mobiles
+3,Mobiles Product 3,Electronics,Mobiles
+4,Mobiles Product 4,Electronics,Mobiles
+5,Mobiles Product 5,Electronics,Mobiles
+6,Mobiles Product 6,Electronics,Mobiles
+7,Mobiles Product 7,Electronics,Mobiles
+8,Accessories Product 1,Electronics,Accessories
+9,Accessories Product 2,Electronics,Accessories
+10,Accessories Product 3,Electronics,Accessories
+11,Accessories Product 4,Electronics,Accessories
+12,Accessories Product 5,Electronics,Accessories
+13,Accessories Product 6,Electronics,Accessories
+14,Accessories Product 7,Electronics,Accessories
+15,Audio Product 1,Electronics,Audio
+16,Audio Product 2,Electronics,Audio
+17,Audio Product 3,Electronics,Audio
+18,Audio Product 4,Electronics,Audio
+19,Audio Product 5,Electronics,Audio
+20,Audio Product 6,Electronics,Audio
+21,Audio Product 7,Electronics,Audio
+22,Mens Wear Product 1,Fashion,Mens Wear
+23,Mens Wear Product 2,Fashion,Mens Wear
+24,Mens Wear Product 3,Fashion,Mens Wear
+25,Mens Wear Product 4,Fashion,Mens Wear
+26,Mens Wear Product 5,Fashion,Mens Wear
+27,Mens Wear Product 6,Fashion,Mens Wear
+28,Mens Wear Product 7,Fashion,Mens Wear
+29,Womens Wear Product 1,Fashion,Womens Wear
+30,Womens Wear Product 2,Fashion,Womens Wear
+31,Womens Wear Product 3,Fashion,Womens Wear
+32,Womens Wear Product 4,Fashion,Womens Wear
+33,Womens Wear Product 5,Fashion,Womens Wear
+34,Womens Wear Product 6,Fashion,Womens Wear
+35,Womens Wear Product 7,Fashion,Womens Wear
+36,Footwear Product 1,Fashion,Footwear
+37,Footwear Product 2,Fashion,Footwear
+38,Footwear Product 3,Fashion,Footwear
+39,Footwear Product 4,Fashion,Footwear
+40,Footwear Product 5,Fashion,Footwear
+41,Footwear Product 6,Fashion,Footwear
+42,Footwear Product 7,Fashion,Footwear
+43,Kitchen Product 1,Home & Kitchen,Kitchen
+44,Kitchen Product 2,Home & Kitchen,Kitchen
+45,Kitchen Product 3,Home & Kitchen,Kitchen
+46,Kitchen Product 4,Home & Kitchen,Kitchen
+47,Kitchen Product 5,Home & Kitchen,Kitchen
+48,Kitchen Product 6,Home & Kitchen,Kitchen
+49,Kitchen Product 7,Home & Kitchen,Kitchen
+50,Home Decor Product 1,Home & Kitchen,Home Decor
+51,Home Decor Product 2,Home & Kitchen,Home Decor
+52,Home Decor Product 3,Home & Kitchen,Home Decor
+53,Home Decor Product 4,Home & Kitchen,Home Decor
+54,Home Decor Product 5,Home & Kitchen,Home Decor
+55,Home Decor Product 6,Home & Kitchen,Home Decor
+56,Home Decor Product 7,Home & Kitchen,Home Decor
+57,Appliances Product 1,Home & Kitchen,Appliances
+58,Appliances Product 2,Home & Kitchen,Appliances
+59,Appliances Product 3,Home & Kitchen,Appliances
+60,Appliances Product 4,Home & Kitchen,Appliances
+61,Appliances Product 5,Home & Kitchen,Appliances
+62,Appliances Product 6,Home & Kitchen,Appliances
+63,Appliances Product 7,Home & Kitchen,Appliances
+64,Skincare Product 1,Beauty,Skincare
+65,Skincare Product 2,Beauty,Skincare
+66,Skincare Product 3,Beauty,Skincare
+67,Skincare Product 4,Beauty,Skincare
+68,Skincare Product 5,Beauty,Skincare
+69,Skincare Product 6,Beauty,Skincare
+70,Skincare Product 7,Beauty,Skincare
+71,Haircare Product 1,Beauty,Haircare
+72,Haircare Product 2,Beauty,Haircare
+73,Haircare Product 3,Beauty,Haircare
+74,Haircare Product 4,Beauty,Haircare
+75,Haircare Product 5,Beauty,Haircare
+76,Haircare Product 6,Beauty,Haircare
+77,Haircare Product 7,Beauty,Haircare
+78,Personal Care Product 1,Beauty,Personal Care
+79,Personal Care Product 2,Beauty,Personal Care
+80,Personal Care Product 3,Beauty,Personal Care
+81,Personal Care Product 4,Beauty,Personal Care
+82,Personal Care Product 5,Beauty,Personal Care
+83,Personal Care Product 6,Beauty,Personal Care
+84,Personal Care Product 7,Beauty,Personal Care
+85,Snacks Product 1,Grocery,Snacks
+86,Snacks Product 2,Grocery,Snacks
+87,Snacks Product 3,Grocery,Snacks
+88,Snacks Product 4,Grocery,Snacks
+89,Snacks Product 5,Grocery,Snacks
+90,Snacks Product 6,Grocery,Snacks
+91,Snacks Product 7,Grocery,Snacks
+92,Beverages Product 1,Grocery,Beverages
+93,Beverages Product 2,Grocery,Beverages
+94,Beverages Product 3,Grocery,Beverages
+95,Beverages Product 4,Grocery,Beverages
+96,Beverages Product 5,Grocery,Beverages
+97,Beverages Product 6,Grocery,Beverages
+98,Beverages Product 7,Grocery,Beverages
+99,Staples Product 1,Grocery,Staples
+100,Staples Product 2,Grocery,Staples
+101,Staples Product 3,Grocery,Staples
+102,Staples Product 4,Grocery,Staples
+103,Staples Product 5,Grocery,Staples
+104,Staples Product 6,Grocery,Staples
+105,Staples Product 7,Grocery,Staples
